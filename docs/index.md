@@ -1,3 +1,10 @@
+---
+title: Palestine-Bleeds
+layout: default
+---
+
+<link rel="stylesheet" href="assets/style.css">
+
 # Palestine-Bleeds
 **This is for saving the verified Organisations & verified donation links to help Palestinians,**
 
