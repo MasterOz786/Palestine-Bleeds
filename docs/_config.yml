@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
 title: Palestine-Bleeds
 description: Verified donation links and resources to help Palestinians.
+sass:
+  style: expanded
