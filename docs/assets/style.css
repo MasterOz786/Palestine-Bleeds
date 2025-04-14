@@ -12,6 +12,7 @@
   --border-color: #30363d;
   --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease;
+  --text-button: #ffffff; /* New variable for button text */
 }
 
 /* Override Jekyll Theme */
@@ -143,23 +144,30 @@ body,
   -webkit-text-fill-color: transparent !important;
 }
 
+/* Updated org-link with improved text color */
 .org-link {
   display: inline-flex !important;
   align-items: center !important;
   padding: 0.75rem 1.5rem !important;
   background-color: var(--accent-secondary) !important;
-  color: var(--text-bright) !important;
+  color: #ffffff !important; /* Fixed to white for better contrast */
   border-radius: 8px !important;
   font-weight: 500 !important;
   transition: var(--transition) !important;
   text-align: center !important;
   min-width: 180px !important;
+  text-decoration: none !important; /* Ensure no underline */
 }
 
 .org-link:hover {
   background-color: var(--accent-primary) !important;
-  text-align: center;
   transform: translateY(-2px) !important;
+  color: #ffffff !important; /* Keep white text on hover */
+}
+
+/* Remove underline effect for buttons */
+.org-link::after {
+  display: none !important;
 }
 
 .org-content {
@@ -257,6 +265,7 @@ body,
   max-width: 100% !important;
 }
 
+/* Updated donate-button with improved text color */
 .donate-button {
   display: flex !important;
   align-items: center !important;
@@ -264,7 +273,7 @@ body,
   width: 100% !important;
   padding: 1rem !important;
   background-color: var(--accent-success) !important;
-  color: var(--text-bright) !important;
+  color: #ffffff !important; /* Fixed to white for better contrast */
   border-radius: 8px !important;
   font-weight: 500 !important;
   transition: var(--transition) !important;
@@ -274,11 +283,18 @@ body,
   overflow-wrap: break-word !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
+  text-decoration: none !important; /* Ensure no underline */
 }
 
 .donate-button:hover {
   background-color: #3fb950 !important;
   transform: translateY(-2px) !important;
+  color: #ffffff !important; /* Keep white text on hover */
+}
+
+/* Remove underline effect for buttons */
+.donate-button::after {
+  display: none !important;
 }
 
 .verification-steps {
@@ -387,6 +403,25 @@ body,
   overflow-wrap: break-word !important;
 }
 
+/* GitHub Pages specific fixes */
+/* This helps ensure the CSS is recognized correctly */
+.container *,
+.site-footer-custom * {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* Force apply styles that might get stripped */
+a.org-link,
+a.donate-button {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+a.org-link::after,
+a.donate-button::after {
+  display: none !important;
+}
+
 /* Specific fix for very small screens */
 @media (max-width: 499px) {
   .container {
@@ -411,6 +446,7 @@ body,
     width: 100% !important;
     text-align: center !important;
     min-width: auto !important;
+    color: #ffffff !important;
   }
   
   .donation h3 {
@@ -437,6 +473,7 @@ body,
   .donate-button {
     padding: 0.75rem !important;
     font-size: 0.9rem !important;
+    color: #ffffff !important;
   }
   
   .verification-steps {
@@ -509,6 +546,7 @@ body,
   .org-link {
     width: 100% !important;
     text-align: center !important;
+    color: #ffffff !important;
   }
 
   .org-content {
@@ -535,6 +573,10 @@ body,
 
   .donation-options {
     grid-template-columns: 1fr !important;
+  }
+  
+  .donate-button {
+    color: #ffffff !important;
   }
   
   /* Improved dua section for small-medium screens */
@@ -587,6 +629,10 @@ body,
     margin: 0 auto 2.5rem !important;
     max-width: 700px !important;
   }
+  
+  .org-link, .donate-button {
+    color: #ffffff !important;
+  }
 }
 
 /* Specific fix for larger phone/smaller tablet screens */
@@ -612,4 +658,20 @@ body,
   .dua {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
   }
+  
+  .org-link, .donate-button {
+    color: #ffffff !important;
+  }
+}
+
+/* Important GitHub Pages fixes - these help ensure the CSS is properly applied */
+html body .org-link,
+html body .donate-button {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+html body .org-link:hover,
+html body .donate-button:hover {
+  color: #ffffff !important;
 }
